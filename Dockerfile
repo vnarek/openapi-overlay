@@ -7,7 +7,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o /app/overlay-cli ./main.go
+RUN CGO_ENABLED=0 go build -o /app/overlay-cli ./main.go
 
 FROM alpine:latest
 
